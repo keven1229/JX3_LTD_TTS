@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        
         mc:Ignorable="d"
-        Title="天天黑车v1.0" Height="185" Width="215" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
-  <Grid >
-    <Label Content="用户名：" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.554,-0.409"/>
-    <Label Content="密    码：" HorizontalAlignment="Left" Margin="11,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.554,-0.409"/>
-    <Label Content="APP ID：" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.554,-0.409"/>
-    <TextBox x:Name="txt_userName" HorizontalAlignment="Left" Height="23" Margin="69,11,0,0" VerticalAlignment="Top" Width="120" AllowDrop="False"/>
-    <PasswordBox x:Name="txt_userPwd" HorizontalAlignment="Left" Height="23" Margin="69,39,0,0" VerticalAlignment="Top" Width="120"/>
-    <TextBox x:Name="txt_userAppID" HorizontalAlignment="Left" Height="23" Margin="69,67,0,0" VerticalAlignment="Top" Width="120"/>
-    <Button x:Name="btn_login" Content="登录" HorizontalAlignment="Left" Margin="114,110,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="Btn_login_Click" />
-    <CheckBox x:Name="chk_saveInfo" Content="记住密码" HorizontalAlignment="Left" Margin="15,116,0,0" VerticalAlignment="Top" Click="Chk_saveInfo_Click"/>
-  </Grid>
+        Title="天天黑车v1.0" Height="188" Width="213" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid >
+        <Label Content="用户名：" HorizontalAlignment="Left" Margin="13,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.554,-0.409"/>
+        <Label Content="密    码：" HorizontalAlignment="Left" Margin="11,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.554,-0.409"/>
+        <Label Content="APP ID：" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.554,-0.409"/>
+        <TextBox x:Name="txt_userName" HorizontalAlignment="Left" Height="23" Margin="69,11,0,0" VerticalAlignment="Top" Width="120" AllowDrop="False"/>
+        <PasswordBox x:Name="txt_userPwd" HorizontalAlignment="Left" Height="23" Margin="69,39,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_userAppID" HorizontalAlignment="Left" Height="23" Margin="69,67,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_login" Content="登录" HorizontalAlignment="Left" Margin="114,117,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="Btn_login_Click" />
+        <CheckBox x:Name="chk_saveInfo" Content="记住密码" HorizontalAlignment="Left" Margin="117,97,0,0" VerticalAlignment="Top" Click="Chk_saveInfo_Click"/>
+        <Button x:Name="btn_offline" Content="离线模式" HorizontalAlignment="Left" Margin="13,117,0,0" VerticalAlignment="Top" Height="24" Width="75" Click="Btn_offline_Click"/>
+    </Grid>
 </Window>

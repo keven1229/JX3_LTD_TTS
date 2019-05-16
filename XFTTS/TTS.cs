@@ -192,5 +192,7 @@ namespace XFTTS
         [DllImport("msc.dll", CallingConvention = CallingConvention.Winapi)]
         public static extern int QTTSSessionEnd(string sessionID, string hints);
 
+
+
     }
 }

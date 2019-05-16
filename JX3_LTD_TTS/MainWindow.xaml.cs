@@ -1,4 +1,5 @@
-﻿using JX3_LTD_TTS.Models;
+﻿using JX3_LTD_TTS.Controllers;
+using JX3_LTD_TTS.Models;
 using JX3_LTD_TTS.Utils;
 using System.Windows;
 
@@ -33,15 +34,22 @@ namespace JX3_LTD_TTS
                 UserNmae = txt_userName.Text,
                 UserPwd = txt_userPwd.Password
             };
-            int ret = XFTTS.TTS.MSPLogin(userInfo.UserNmae, userInfo.UserPwd, userInfo.UserAppid);
+            int ret = QTTSAPI.MSPLogin(userInfo);
             if (ret == (int)XFTTS.TTS.ErrorCode.MSP_SUCCESS)
             {
-               
-
+                TeamWindow tw = new TeamWindow
+                {
+                    Owner = this,
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                };
+                tw.Tag = userInfo;
+                tw.Show();
+                this.Hide();
+                QTTSAPI.MSPLogout();
             }
             else
             {
-                MessageBox.Show(string.Format("登录失败!（Error:{0}）",ret));
+                MessageBox.Show(string.Format("登录失败!（Error:{0}）", ret));
             }
         }
 
@@ -74,6 +82,26 @@ namespace JX3_LTD_TTS
                 txt_userPwd.Password = userInfo.UserPwd;
                 chk_saveInfo.IsChecked = true;
             }
+        }
+
+        private void Btn_offline_Click(object sender, RoutedEventArgs e)
+        {
+            TeamWindow tw = new TeamWindow
+            {
+                Owner = this,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+
+            };
+            tw.Tag = "offline";
+            tw.Title += "  离线模式";
+            tw.btn_raidUpdate.Content = "读取";
+            tw.Show();
+            this.Hide();
+        }
+
+        private void Window_Closed(object sender, System.EventArgs e)
+        {
+            Close();
         }
     }
 }
